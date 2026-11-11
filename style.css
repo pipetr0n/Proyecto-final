@@ -1,0 +1,82 @@
+ /* Contenedor de las 3 columnas */
+.tres-columnas {
+  display: grid;
+  /* Izquierda: 250px | Centro: espacio libre | Derecha: 250px */
+  grid-template-columns: 250px 1fr 250px;
+  gap: 30px; /* Espacio entre columnas */
+  max-width: 1200px;
+  margin: 0 auto; /* Centra todo en la pantalla */
+  padding: 20px;
+}
+
+/* Estilo opcional para diferenciar visualmente las columnas */
+.columna-lateral {
+  background-color: #f4f4f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.columna-centro {
+  padding: 15px;
+}
+
+/* Adaptación para celulares y pantallas pequeñas */
+@media (max-width: 768px) {
+  .tres-columnas {
+    grid-template-columns: 1fr; /* Apila todo en una sola columna */
+  }
+}
+
+ 
+ 
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: left;
+  color: #ffffff;
+}
+
+h4{
+  font-size: 30px;
+  text-align: right;
+  color: #ffffff;
+}
+
+
+
+
+p  {
+  font-size: 15px;
+  line-height: 2px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+html {
+  background-color: #16110b;
+   font-family: "Redaction 35", serif;
+  font-weight: 400;
+  font-style: normal;
+
+
+}
+
+
+img {
+  width: 500px; 
+  height: auto; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
