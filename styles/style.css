@@ -51,6 +51,15 @@ p {
   line-height: 1.6;
   letter-spacing: 1px;
   color: #ffffff;
+   margin-bottom: 60px;
+}
+
+.parrafo {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: #ffffff;
+   margin-bottom: 10px;
 }
 
 html {
