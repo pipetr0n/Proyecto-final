@@ -21,3 +21,31 @@ body {
     
 }
 
+  
+.animate__animated.animate__wobble {
+  --animate-duration: 60s;
+  --animate-repeat: 20;
+}
+
+.animate__animated.animate__heartBeat{
+
+  --animate-duration: 30s;
+--animate__infinite:infinite;
+
+}
+
+.animate__animated.animate__jello {
+
+  --animate-duration: 8s;
+   --animate-delay: 2s;
+  --animate__infinite:infinite;
+
+}
+
+.animate__animated.animate__rubberBand {
+
+  --animate-duration: 8s;
+   --animate-delay: 2s;
+  --animate__infinite:infinite;
+
+}
