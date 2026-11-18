@@ -1,32 +1,26 @@
 // Listas de textos
 const listaParrafos1 = [
-  "Nos encontramos sin vernos,",
-  "Te extraña todo lo que no existe sin tu cuerpo",
-  "Lìneas azules de contrabando,",
-  "Tratan de formar tu rostro,",
-  "Voy a ser un elemento,",
-  "Un simple carnaval de ideas,",
-  "Gritarte un montón de estrellas,",
-  "Quiero dejarte entera.",
+"Pedazos",
+"Fracciones",
+"Momentos",
+"Risas",
+"sonidos"
   ]
 
-const listaParrafos2 = [  "Cantarte espacios,",
-  "transvestir tu nombre,",
-  "hasta que se vuelva nuevo,",
-  "el movimiento de nuestras almas,",
-  "por nuestros cuerpos,",
-  "quiero venderle algo de ti a la noche,",
-  "las intimidades,",
-  "me canse de imitar tu alma,",
-  "grietas tímidas te esperan,"
+const listaParrafos2 = [  
+  "de aguas",
+"de pieles",
+"de tripas",
+"de hojas",
+"de mentes",
 ]
 
-const listaParrafos3 = [  "que ya no saben que hacer conmigo.",
-  "al sueño mas ambiguo.",
-  "y al mundo donde te perteneces.",
-  "en un trozo de papel.",
-  "y la noche se desnude junto a tu cuerpo.",
-  "para que vuelvas a brillar."
+const listaParrafos3 = [  
+  "lentas",
+"tristes",
+"silentes",
+"en espera",
+"propias",
 ]
 
 
