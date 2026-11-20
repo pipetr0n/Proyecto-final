@@ -90,3 +90,18 @@ footer{
     color:white;
     margin-top:50px;
 }
+
+.btw{
+    display:inline-block;
+    background:#ff00bb;
+    color:white;
+    text-decoration:overline wavy black; 
+   padding:12px 24px;
+    border-radius:5px;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.btw:hover{
+    background:#47103d;
+}
