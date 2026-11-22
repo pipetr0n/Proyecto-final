@@ -1,2 +1,2 @@
 # Proyecto-final
-Quiero hacer una clase de collage poetico, explorar diferentes sensaciones y emociones a través de las diferentes paginas, jugar con el desorden y la ambiguedad. serìa chevere hacer algo como la pagina nobody here donde también se pueda interactuar.
+Quiero hacer una clase de collage poetico, explorar diferentes sensaciones y emociones a través de las diferentes paginas, jugar con el desorden y la ambiguedad. Es un proyecto sobre la identidad explorado desde distintos tipos de paginas. Me costo un poco aprender a usar la biblioteca de animación pero ya pude entenderla bastante bien, tuve que aprender a poner sonido, pero esta entrega me ha costado mucho menos que otros trabajos y considero que tiene una mejor calidad
