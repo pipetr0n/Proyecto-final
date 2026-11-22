@@ -1,91 +1,320 @@
+/* =========================================
+   ORÁCULO
+   Web oscura estilo 2000
+========================================= */
+
+:root {
+  --negro: #000000;
+  --panel: #090909;
+  --panel-claro: #101010;
+  --gris-oscuro: #1f1f1f;
+  --gris: #77736b;
+  --texto: #aaa69b;
+  --texto-claro: #d0ccbf;
+  --verde: #71806b;
+  --verde-oscuro: #344031;
+  --vino: #542b31;
+}
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
 
 html {
-  
-   box-sizing: border-box;
-  height: 100%;
-  background-color: #050009;
-    font-family: "Lacquer", system-ui;
-  font-weight: 500;
-  font-style: normal;
+  min-height: 100%;
+  background: #000;
 }
-
- 
-
-pre {
- color:azure;
-  font-family: "Lacquer", system-ui;
-  font-weight: 500;
-  font-style: normal;
-}
-
- 
-
 
 body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 35px 12px;
 
-  margin: 250px;
-  padding: 70px;
+  color: var(--texto);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
 
-  border: 15px solid #000000;
-  background-color: #ffdda9;
+  background-color: #000;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.015) 0,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at center,
+      #151713 0%,
+      #070807 42%,
+      #000 80%
+    );
 
-   background-image: url(fondo.gif)
-
+  overflow-x: hidden;
 }
 
-::selection {
-  background-color: #30cac073;
-  color: #130808;
+/* Oscuridad alrededor de la pantalla */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 25%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
 }
 
-h2 {
-  font-size: 1.1em;
-  
+/* Líneas de monitor antiguo */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 21;
+
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.18) 3px
+  );
+
+  opacity: 0.45;
 }
 
-a, a:active, a:visited, a:hover {
-  color: rgb(254, 244, 255);
-  cursor: pointer;
-  text-decoration: none;
-}
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
 
 #contenedorGeneral {
-  margin: auto 1em;
+  position: relative;
+  z-index: 1;
+
+  width: min(760px, 96%);
+  min-height: 600px;
+  margin: 0 auto;
+  padding: 18px;
+
+  background: #070707;
+
+  border: 1px solid #32352f;
+  border-top-color: #50544b;
+  border-left-color: #45483f;
+  border-right-color: #121212;
+  border-bottom-color: #101010;
+
+  box-shadow:
+    0 0 0 4px #020202,
+    0 0 0 5px #21231f,
+    0 0 35px rgba(73, 89, 67, 0.18),
+    inset 0 0 55px rgba(0, 0, 0, 0.95);
+}
+
+/* Encabezado falso de ventana */
+
+#contenedorGeneral::before {
+  content: "[ archivo_oraculo.html ]";
+  display: block;
+
+  margin: -7px -7px 30px;
+  padding: 5px 8px;
+
+  color: #706f67;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+
+  background: #10110f;
+  border: 1px solid #292b27;
+  border-bottom-color: #3d4039;
+}
+
+/* Texto inferior */
+
+#contenedorGeneral::after {
+  content: "última actualización: 00/00/2003  |  visitante desconocido";
+  display: block;
+  clear: both;
+
+  margin-top: 70px;
+  padding-top: 12px;
+
+  color: #454740;
+  font-size: 9px;
   text-align: center;
+  letter-spacing: 1px;
+
+  border-top: 1px dotted #292b27;
 }
 
-#tituloPagina {
-  margin-top: 1em;
-  margin-bottom: 0;
-  margin-bottom: 0.5em;
-  font-family: "Barriecito", system-ui;
-  font-weight: 400;
-  font-style: normal;
+/* =========================================
+   TÍTULO
+========================================= */
+
+h1 {
+  margin: 5px 0 8px;
+
+
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: -3px;
+
+  filter: blur(0.15px);
 }
 
-#tituloPagina:hover {
-  color: rgb(225, 14, 49);
-  cursor: pointer;
+h1 a {
+  color: #8e9487;
+  text-decoration: none;
+
+  text-shadow:
+    1px 1px 0 #000,
+    0 0 4px rgba(112, 134, 103, 0.4),
+    0 0 15px rgba(74, 93, 68, 0.2);
+
+  transition: color 0.2s;
 }
+
+h1 a:visited {
+  color: #716972;
+}
+
+h1 a:hover {
+  color: #c2c8b8;
+  text-decoration: line-through;
+
+  text-shadow:
+    0 0 4px rgba(179, 195, 168, 0.55),
+    0 0 12px rgba(100, 123, 91, 0.35);
+}
+
+/* =========================================
+   SUBTÍTULO
+========================================= */
+
+h2 {
+  width: fit-content;
+  margin: 0 auto 35px;
+  padding: 4px 16px;
+
+  color: #5e6259;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 4px;
+  text-transform: lowercase;
+
+  border-left: 1px solid #373a34;
+  border-right: 1px solid #373a34;
+}
+
+h2::before {
+  content: ":: ";
+  color: #3e4a3a;
+}
+
+h2::after {
+  content: " ::";
+  color: #3e4a3a;
+}
+
+/* =========================================
+   VENTANA DE PALABRAS
+========================================= */
 
 #contenedorPersonaje {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  min-height: 310px;
+  margin: 0 10px 36px;
+
+  background: #020202;
+  border: 1px solid #33352f;
+
+  box-shadow:
+    inset 0 0 35px rgba(0, 0, 0, 1),
+    0 0 12px rgba(77, 91, 70, 0.1);
+}
+
+/* Barra superior del panel */
+
+#contenedorPersonaje::before {
+  content: "fragmentos encontrados: 15";
+  position: absolute;
+  top: -19px;
+  left: -1px;
+
+  padding: 3px 7px;
+
+  color: #51544e;
+  font-family: "Courier New", monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+
+  background: #080808;
+  border: 1px solid #292b27;
+}
+
+/* Pequeño indicador parpadeante */
+
+#contenedorPersonaje::after {
+  content: "";
+  position: absolute;
+  top: -13px;
+  right: 7px;
+
+  width: 4px;
+  height: 4px;
+
+  background: #687b60;
+  border-radius: 50%;
+
+  box-shadow: 0 0 6px #758b6b;
+
+  animation: parpadeo 1.7s steps(1) infinite;
+}
+
+/* =========================================
+   COLUMNAS
+========================================= */
+
+#contenedorPersonaje pre {
+  position: relative;
+
   display: flex;
-  flex-direction: column;
-  align-items: space-around;
-}
+  align-items: center;
+  justify-content: center;
 
-.imagen {
-  height: 170px;
-  width: 150px;
-  margin: 0em auto;
-}
+  min-width: 0;
+  min-height: 310px;
+  margin: 0;
+  padding: 38px 10px 25px;
 
-#boton {
-  font-size: 0.9em;
-  background-color:  rgb(0, 0, 0);
-  color: white;
-  cursor: pointer;
-    font-family: "Lacquer", system-ui;
-  font-weight: 500;
-  font-style: normal;
-}
+  color: #817f77;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(0.8rem, 2vw, 1.05rem);
+  line-height: 2.4;
+  text-align: center;
+  letter-spacing: 1px;
+  white-space: pre-line;
+
+  background
