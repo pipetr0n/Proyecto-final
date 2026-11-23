@@ -1,107 +1,503 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap');
+/* ========================================
+   LA TRISTEZA DE MIRAR ATRÁS
+   Diseño académico y editorial
+======================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+  --fondo: #e8e5df;
+  --papel: #f8f6f1;
+  --papel-secundario: #f0ede6;
+  --tinta: #242422;
+  --texto: #464540;
+  --texto-claro: #706d65;
+  --vino: #713b43;
+  --vino-oscuro: #4d282e;
+  --linea: #d2cec4;
+  --linea-oscura: #9b978e;
+  --blanco: #ffffff;
 }
 
-body{
-    font-family:'Inter', sans-serif;
-    background:#f4f6f8;
-    color:#2c2c2c;
-    line-height:1.8;
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+  box-sizing: border-box;
 }
 
-.hero{
-    background:#0b2748;
-    color:white;
-    padding:80px 20px;
-    text-align:center;
+html {
+  scroll-behavior: smooth;
 }
 
-.hero h1{
-    font-family:'Merriweather', serif;
-    font-size:3rem;
-    margin-bottom:15px;
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  color: var(--texto);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.75;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(50, 45, 40, 0.013) 0,
+      rgba(50, 45, 40, 0.013) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    var(--fondo);
+
+  -webkit-font-smoothing: antialiased;
 }
 
-.subtitle{
-    max-width:850px;
-    margin:auto;
-    opacity:0.9;
+/* Selección de texto */
+
+::selection {
+  color: var(--blanco);
+  background: var(--vino);
 }
 
-.container{
-    max-width:1000px;
-    margin:40px auto;
-    padding:0 20px;
+/* ========================================
+   PORTADA
+======================================== */
+
+.hero {
+  position: relative;
+  min-height: 72vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 90px 24px;
+
+  color: var(--papel);
+
+  background:
+    linear-gradient(
+      rgba(21, 22, 21, 0.78),
+      rgba(30, 27, 27, 0.92)
+    ),
+    url("../images/portada.jpg") center / cover no-repeat;
+
+  border-bottom: 7px solid var(--vino);
 }
 
-.card{
-    background:white;
-    margin-bottom:25px;
-    padding:35px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+/* Si no tienes portada.jpg, este color permanece detrás */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  pointer-events: none;
 }
 
-.card h2{
-    font-family:'Merriweather', serif;
-    color:#0b2748;
-    margin-bottom:15px;
+.hero::after {
+  content: "INVESTIGACIÓN ACADÉMICA · 2026";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+
+  color: rgba(255, 255, 255, 0.55);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.26rem;
+
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
-.tabla{
-    width:100%;
-    max-width:700px;
-    display:block;
-    margin:20px auto;
-    border:1px solid #ddd;
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(880px, 100%);
+  margin: auto;
+
+  text-align: center;
 }
 
-blockquote{
-    font-style:italic;
-    border-left:4px solid #0b2748;
-    padding-left:20px;
-    margin:20px 0;
-    color:#444;
+.hero h1 {
+  max-width: 820px;
+  margin: 0 auto 28px;
+
+  color: #f4f1e9;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: -0.15rem;
+
+  text-wrap: balance;
 }
 
-.btn{
-    display:inline-block;
-    background:#0b2748;
-    color:white;
-    text-decoration:none;
-    padding:12px 24px;
-    border-radius:5px;
-    margin-top:15px;
-    transition:0.3s;
+.subtitle {
+  max-width: 690px;
+  margin: 0 auto 42px;
+
+  color: rgba(246, 241, 229, 0.74);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.75;
+  letter-spacing: 0.02rem;
+
+  text-wrap: balance;
 }
 
-.btn:hover{
-    background:#143d6b;
+/* ========================================
+   BOTONES
+======================================== */
+
+.btn,
+.btw {
+  display: inline-block;
+  padding: 12px 22px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09rem;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
-footer{
-    text-align:center;
-    padding:25px;
-    background:#0b2748;
-    color:white;
-    margin-top:50px;
+.hero .btn {
+  color: #f5f1e8;
+  background: transparent;
+  border: 1px solid rgba(245, 241, 232, 0.62);
 }
 
-.btw{
-    display:inline-block;
-    background:#ff00bb;
-    color:white;
-    text-decoration:overline wavy black; 
-   padding:12px 24px;
-    border-radius:5px;
-    margin-top:15px;
-    transition:0.3s;
+.hero .btn:hover {
+  color: var(--tinta);
+  background: #f5f1e8;
+  border-color: #f5f1e8;
+
+  transform: translateY(-2px);
 }
 
-.btw:hover{
-    background:#47103d;
+.card .btn,
+.btw {
+  color: var(--papel);
+  background: var(--vino);
+  border: 1px solid var(--vino);
+}
+
+.card .btn:hover,
+.btw:hover {
+  color: var(--papel);
+  background: var(--vino-oscuro);
+  border-color: var(--vino-oscuro);
+
+  transform: translateY(-2px);
+}
+
+/* Accesibilidad para teclado */
+
+.btn:focus-visible,
+.btw:focus-visible {
+  outline: 3px solid rgba(113, 59, 67, 0.28);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.container {
+  width: min(980px, calc(100% - 40px));
+  margin: -55px auto 80px;
+
+  position: relative;
+  z-index: 2;
+
+  background: var(--papel);
+
+  border: 1px solid var(--linea);
+  box-shadow:
+    0 18px 55px rgba(35, 31, 27, 0.13),
+    0 2px 5px rgba(35, 31, 27, 0.06);
+}
+
+/* ========================================
+   SECCIONES
+======================================== */
+
+.card {
+  position: relative;
+
+  margin: 0;
+  padding: 58px 75px 62px;
+
+  background: transparent;
+  border-bottom: 1px solid var(--linea);
+}
+
+.card:last-child {
+  border-bottom: none;
+}
+
+/* Numeración editorial automática */
+
+.card {
+  counter-increment: seccion;
+}
+
+.container {
+  counter-reset: seccion;
+}
+
+.card::before {
+  content: "0" counter(seccion);
+
+  position: absolute;
+  top: 63px;
+  left: 30px;
+
+  color: var(--vino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+}
+
+.card h2 {
+  margin: 0 0 27px;
+  padding-bottom: 17px;
+
+  color: var(--tinta);
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.04rem;
+
+  border-bottom: 1px solid var(--linea);
+}
+
+.card p {
+  max-width: 730px;
+  margin: 0 0 22px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Primera letra del resumen */
+
+.card:first-child > p:first-of-type::first-letter {
+  float: left;
+
+  margin: 8px 9px 0 0;
+
+  color: var(--vino);
+  font-size: 4rem;
+  line-height: 0.72;
+}
+
+/* Alternancia muy ligera entre secciones */
+
+.card:nth-child(even) {
+  background: rgba(232, 228, 219, 0.28);
+}
+
+/* ========================================
+   IMAGEN DE RESULTADOS
+======================================== */
+
+.tabla {
+  display: block;
+
+  width: 100%;
+  max-width: 790px;
+  height: auto;
+
+  margin: 12px auto 35px;
+  padding: 12px;
+
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+
+  box-shadow: 0 8px 25px rgba(31, 29, 26, 0.08);
+
+  filter: saturate(0.85) contrast(1.02);
+}
+
+/* Pie de imagen automático */
+
+.card:has(.tabla) .tabla + p {
+  padding-top: 24px;
+  border-top: 1px dotted var(--linea-oscura);
+}
+
+/* ========================================
+   CITA
+======================================== */
+
+blockquote {
+  position: relative;
+
+  max-width: 760px;
+  margin: 10px 0 35px;
+  padding: 32px 40px 32px 50px;
+
+  color: #535047;
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.7;
+
+  background: var(--papel-secundario);
+  border-left: 4px solid var(--vino);
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -6px;
+  left: 12px;
+
+  color: rgba(113, 59, 67, 0.25);
+  font-size: 5rem;
+  font-style: normal;
+  line-height: 1;
+}
+
+/* ========================================
+   DOCUMENTO FINAL
+======================================== */
+
+.card:last-child {
+  padding-top: 70px;
+  padding-bottom: 75px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(248, 246, 241, 0.92),
+      rgba(248, 246, 241, 0.92)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 39px,
+      rgba(113, 59, 67, 0.05) 40px
+    );
+}
+
+.card:last-child p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card:last-child .btn {
+  margin-top: 8px;
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+footer {
+  padding: 35px 20px;
+
+  color: #aaa69d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  text-align: center;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+
+  background: #242422;
+  border-top: 1px solid #3d3c38;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+
+  .hero {
+    min-height: 620px;
+    padding: 100px 25px 90px;
+  }
+
+  .hero::before {
+    inset: 10px;
+  }
+
+  .hero::after {
+    top: 28px;
+    font-size: 0.55rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .hero h1 {
+    letter-spacing: -0.08rem;
+  }
+
+  .subtitle {
+    line-height: 1.6;
+  }
+
+  .container {
+    width: calc(100% - 20px);
+    margin-top: -35px;
+    margin-bottom: 45px;
+  }
+
+  .card {
+    padding: 55px 26px 50px;
+  }
+
+  .card::before {
+    top: 26px;
+    left: 26px;
+  }
+
+  .card h2 {
+    font-size: 1.8rem;
+  }
+
+  blockquote {
+    padding: 30px 25px 30px 38px;
+  }
+
+  .btn,
+  .btw {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   REDUCCIÓN DE MOVIMIENTO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .btw {
+    transition: none;
+  }
 }

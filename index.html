@@ -9,6 +9,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Redaction+35:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <audio autoplay loop muted id="musica">
+    <source src="pikito.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("click", () => {
+    const musica = document.getElementById("musica");
+    musica.muted = false;
+    musica.play();
+}, { once: true });
+</script>
   </head>
   <body>
 
@@ -28,6 +39,7 @@
 
   <!-- Texto en la Mitad -->
   <main class="columna-centro">
+    <p>click para que suene pikito</p>
     <h1>Proyecto Final: Últimos planteamientos sobre mi</h1>
     <p class="parrafo">Buscando lo que no se me ha perdido </p>
     <img src="images/foto.JPG" alt="Casa">
