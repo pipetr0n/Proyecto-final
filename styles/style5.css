@@ -1,0 +1,117 @@
+.tres-columnas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.columna-lateral {
+  background-color: #485975; 
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.columna-centro {
+  min-width: 0;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .tres-columnas {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: #ffffff;
+}
+
+h4{
+  font-size: 30px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: #ffffff;
+   margin-bottom: 60px;
+}
+
+.parrafo {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.parrafo.firma {
+  margin-top: 28px;
+}
+
+html {
+  background-color:#030303;
+ 
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Share Tech", sans-serif;
+  
+
+}
+
+h3 {
+  font-family: "Share Tech", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  background-color: #030303;
+
+    animation-name :cambioColor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 24px auto 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.P3 {
+  display: inline-block;
+  margin: 0 20px 20px;
+}
+
+.animate__animated.animate__heartBeat{
+
+  --animate-duration: 30s;
+--animate__infinite:infinite;
+
+}
